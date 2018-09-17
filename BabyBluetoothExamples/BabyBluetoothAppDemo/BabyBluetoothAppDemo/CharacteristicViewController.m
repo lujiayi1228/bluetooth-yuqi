@@ -159,9 +159,15 @@
                        NSData * data = characteristics.value;
                        Byte * resultByte = (Byte *)[data bytes];
                        
+                       NSString *str = @"";
                        for(int i=0;i<[data length];i++) {
-                           NSLog(@"testByteFF02[%d] = %d =%@\n",i,resultByte[i],[self getHexByDecimal:resultByte[i]]);
+                           NSLog(@"testByteFF02[%d]\t = %d\t =%@\n",i,resultByte[i],[self getHexByDecimal:resultByte[i]]);
+                           str = [str stringByAppendingString:[NSString stringWithFormat:@"%@ ",[self getHexByDecimal:resultByte[i]]]];
+                           if (i == [data length] - 1) {
+                               NSLog(@"%@",str);
+                           }
                        }
+                       
                        
                 [self insertReadValues:characteristics];
             }];
@@ -385,9 +391,49 @@
     if (hex.length == 1) {
         hex = [@"0" stringByAppendingString:hex];
     }
-    hex = [@"0x" stringByAppendingString:hex];
+//    hex = [@"0x" stringByAppendingString:hex];
     return hex;
 }
 
+- (void)dealResponseCode:(NSData *)response
+{
+    Byte * resultByte = (Byte *)[response bytes];
+    
+    if (response == nil || [response length] != 20) {
+        return;
+    }
+    
+    NSString *str = @"";
+    for(int i=0;i<[response length];i++) {
+        NSLog(@"testByteFF02[%d]\t = %d\t =%@\n",i,resultByte[i],[self getHexByDecimal:resultByte[i]]);
+        str = [str stringByAppendingString:[NSString stringWithFormat:@"%@ ",[self getHexByDecimal:resultByte[i]]]];
+        if (i == [response length] - 1) {
+            NSLog(@"%@",str);
+        }
+    }
+    
+    if (![[str substringToIndex:4] isEqualToString:@"DBDE"]) {
+        return;
+    }
+    
+    str = [str substringFromIndex:4];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    NSArray *strArr = [str componentsSeparatedByString:@" "];
+    for (int i = 0; i < strArr.count/2; i += 2) {
+        [arr addObject:[strArr[i] stringByAppendingString:strArr[i + 1]]];
+    }
+
+    //应答数据长度
+    NSString *length = arr[0];
+    //去除长度字段
+    [arr removeObjectAtIndex:0];
+    
+    NSInteger index, be, cId, success;
+    
+    //判断是否为应答指令
+    
+    
+    
+}
 
 @end

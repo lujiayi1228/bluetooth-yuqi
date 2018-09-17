@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		79CD9BD01CDB7395009DAD1C /* BabyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
 		79CD9BD11CDB7395009DAD1C /* BabyDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
+		BB6692E0214F7D260041F730 /* YuQiBluetoothKaKaDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YuQiBluetoothKaKaDefine.h; sourceTree = "<group>"; };
 		E13AD4D31BB78EF900D61C84 /* BabyOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
 		E13AD4D41BB78EF900D61C84 /* BabyOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
 		E16F24A61C20484E00A5C274 /* BabyPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				F05F7BA11B70AB0F0051C68A /* PeripheralViewController.m */,
 				F05F7BB01B7442B50051C68A /* CharacteristicViewController.h */,
 				F05F7BB11B7442B50051C68A /* CharacteristicViewController.m */,
+				BB6692E0214F7D260041F730 /* YuQiBluetoothKaKaDefine.h */,
 				E1807E7A1B6CA29100E99C63 /* Main.storyboard */,
 				E1807E7D1B6CA29100E99C63 /* Images.xcassets */,
 				E1807E7F1B6CA29100E99C63 /* LaunchScreen.xib */,
